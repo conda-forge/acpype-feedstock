@@ -1,5 +1,5 @@
 {% set name = "acpype" %}
-{% set version = "0.1.0" %}
+{% set version = "2019.07.02.16.09" %}
 
 package:
   name: {{ name|lower }}
