@@ -22,7 +22,6 @@ requirements:
     run:
         - openbabel
         - python >=3
-        - pip
         - ambertools
 test:
     commands:
