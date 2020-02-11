@@ -5,10 +5,10 @@ package:
   name: {{ name|lower }}
   version: {{ version }}
 source:
-    url: https://github.com/alanwilter/{{ name }}/archive/d99be8e17e3f999e06a401e5efdbe5f2fc9a2959.tar.gz
-    sha256: 43736873feaa791c76ee02a6eae6aba5fb661149a915d8772ec5a4a1f920473d
+    url: https://github.com/alanwilter/{{ name }}/archive/fbe19e5ab1733b22bf15a6ccece615f86c420a74.tar.gz
+    sha256: 19bc474dac9351833f26ae5e6d33c4f7ca178ebe2b52d30ca54135d0d423a469
 build:
-    number: 0
+    number: 1
     script:
         - mv recipe/setup_conda.py setup.py
         - "{{ PYTHON }} -m pip install . -vv"
