@@ -5,8 +5,10 @@ package:
   name: {{ name|lower }}
   version: {{ version }}
 source:
-    url: https://github.com/alanwilter/{{ name }}/archive/d99be8e17e3f999e06a401e5efdbe5f2fc9a2959.tar.gz
-    sha256: 43736873feaa791c76ee02a6eae6aba5fb661149a915d8772ec5a4a1f920473d
+    url: https://github.com/alanwilter/{{ name }}/archive/{{ version }}.tar.gz
+    sha256: f568177bdec8b43f4b343deb00e3a4be98a8d2c96a1c6bff76a344dfec4e4d6d
+    patches:
+        - ob3.patch
 build:
     number: 0
     script:
@@ -14,7 +16,7 @@ build:
         - "{{ PYTHON }} -m pip install . -vv"
     noarch: python
     entry_points: 
-        - acpype=anaconda.acpype:init_main
+        - acpype=scripts.acpype:init_main
 requirements:
     host:
         - python >=3
