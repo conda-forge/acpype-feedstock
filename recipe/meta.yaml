@@ -1,46 +1,44 @@
 {% set name = "acpype" %}
-{% set version = "2019.10.05.12.26" %}
+{% set version = "2020.03.14.11.44" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 source:
-    url: https://github.com/alanwilter/{{ name }}/archive/{{ version }}.tar.gz
-    sha256: f568177bdec8b43f4b343deb00e3a4be98a8d2c96a1c6bff76a344dfec4e4d6d
-    patches:
-        - ob3.patch
+  url: https://github.com/alanwilter/{{ name }}/archive/{{ version }}.tar.gz
+  sha256: f7427b4a3681604a460990985680657a7870e9bc3618c35ec3c066c92073ef88
 build:
-    number: 1
-    script:
-        - mv recipe/setup_conda.py setup.py
-        - "{{ PYTHON }} -m pip install . -vv"
-    noarch: python
-    entry_points: 
-        - acpype=scripts.acpype:init_main
+  number: 0
+  script:
+    - mv recipe/setup_conda.py setup.py
+    - {{ PYTHON }} -m pip install . -vv
+  noarch: python
+  entry_points:
+    - acpype=scripts.acpype:init_main
 requirements:
-    host:
-        - python >=3
-        - pip
-    run:
-        - openbabel
-        - python >=3
-        - ambertools
+  host:
+    - python >=3
+    - pip
+  run:
+    - openbabel
+    - python >=3
+    - ambertools
 test:
-    commands:
-        - acpype -h
+  commands:
+    - acpype -h
 about:
-    home: https://github.com/alanwilter/acpype
-    license: GPL-3.0
-    license_family: GPL
-    license_file: LICENSE
-    summary: 'Generates topologies for chemical compounds'
-    description: |
-      A tool based in Python to use Antechamber to generate topologies 
-      for chemical compounds and to interface with other python 
-      applications like CCPN or ARIA.
-      
-    doc_url: https://github.com/alanwilter/acpype
-    dev_url: https://github.com/alanwilter/acpype
+  home: https://github.com/alanwilter/acpype
+  license: GPL-3.0
+  license_family: GPL
+  license_file: LICENSE
+  summary: Generates topologies for chemical compounds
+  description: |
+    A tool based in Python to use Antechamber to generate topologies 
+    for chemical compounds and to interface with other python 
+    applications like CCPN or ARIA.
+
+  doc_url: https://github.com/alanwilter/acpype
+  dev_url: https://github.com/alanwilter/acpype
 
 extra:
   recipe-maintainers:
