@@ -7,8 +7,6 @@ package:
 source:
   url: https://github.com/alanwilter/{{ name }}/archive/{{ version }}.tar.gz
   sha256: f7427b4a3681604a460990985680657a7870e9bc3618c35ec3c066c92073ef88
-  patches:
-    - ob3.patch
 build:
   number: 0
   script:
