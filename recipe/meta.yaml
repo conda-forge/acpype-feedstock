@@ -1,12 +1,12 @@
 {% set name = "acpype" %}
-{% set version = "2020.03.15.13.27" %}
+{% set version = "2020.05.27.16.15" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 source:
   url: https://github.com/alanwilter/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: d59a0d7e3d3cc93d32170dc2ad31750faede418d76422acf9656a9216c9bed7b
+  sha256: 1ffb8dbba415c7a1ed83f6d3af26356da043b2636d3a851c983fab51e2987efc
 build:
   number: 0
   script:
