@@ -5,7 +5,7 @@ Home: https://github.com/alanwilter/acpype
 
 Package license: GPL-3.0
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Generates topologies for chemical compounds
 
@@ -119,5 +119,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@alanwilter](https://github.com/alanwilter/)
+* [@lkagami](https://github.com/lkagami/)
 * [@simonbray](https://github.com/simonbray/)
 
