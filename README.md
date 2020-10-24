@@ -5,9 +5,13 @@ Home: https://github.com/alanwilter/acpype
 
 Package license: GPL-3.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/acpype-feedstock/blob/master/LICENSE.txt)
 
 Summary: Generates topologies for chemical compounds
+
+Development: https://github.com/alanwilter/acpype
+
+Documentation: https://github.com/alanwilter/acpype
 
 A tool based in Python to use Antechamber to generate topologies
 for chemical compounds and to interface with other python
