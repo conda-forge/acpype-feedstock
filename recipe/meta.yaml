@@ -23,6 +23,11 @@ requirements:
     - openbabel
     - python >=3
     - ambertools
+    - parmed
+    - numpy
+    - scipy
+    - matplotlib-base
+
 test:
   commands:
     - acpype -h
