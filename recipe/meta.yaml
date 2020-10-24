@@ -1,12 +1,12 @@
 {% set name = "acpype" %}
-{% set version = "2020.07.25.08.41" %}
+{% set version = "2020.10.24.12.16" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 source:
   url: https://github.com/alanwilter/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 6d096553bacc3f98fe8d160a47c7c07a69e6bc42f6bdc249df47cc736dcee993
+  sha256: 95205de56663ad298f3770810166ee842dac7ca774d497a1624b806e71fb6d3e
 build:
   number: 0
   script:
@@ -23,6 +23,11 @@ requirements:
     - openbabel
     - python >=3
     - ambertools
+    - parmed
+    - numpy
+    - scipy
+    - matplotlib-base
+
 test:
   commands:
     - acpype -h
