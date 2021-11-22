@@ -1,2 +1,2 @@
 conda_forge_output_validation: true
-inspection: false
+inspection: true
