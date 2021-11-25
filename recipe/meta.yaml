@@ -33,7 +33,7 @@ test:
     - acpype -h
 about:
   home: https://github.com/alanwilter/acpype
-  license: GPL-3.0
+  license: GPL-3.0-or-later
   license_family: GPL
   license_file: LICENSE
   summary: Generates topologies for chemical compounds
