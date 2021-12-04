@@ -14,7 +14,7 @@ build:
     - {{ PYTHON }} -m pip install . -vv
   noarch: python
   entry_points:
-    - acpype=acpype_lib.acpype:init_main
+    - acpype=acpype.cli:init_main
 requirements:
   host:
     - python >=3
