@@ -19,6 +19,7 @@ requirements:
   host:
     - python >=3
     - poetry
+    - pip
   run:
     - openbabel
     - python >=3
