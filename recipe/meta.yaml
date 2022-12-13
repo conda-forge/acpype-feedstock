@@ -8,7 +8,7 @@ source:
   url: https://github.com/alanwilter/{{ name }}/archive/{{ version }}.tar.gz
   sha256: 5f7e6162d9a0aed2f770b9ccf5617ac1398a423cca815ae37cbf66d4cd62ea2f
 build:
-  number: 0
+  number: 1
   script:
     - mv recipe/setup_conda.py setup.py
     - {{ PYTHON }} -m pip install . -vv
