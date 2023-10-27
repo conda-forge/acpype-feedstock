@@ -1,14 +1,14 @@
 {% set name = "acpype" %}
-{% set version = "2022.7.21" %}
+{% set version = "2023.10.27" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 source:
   url: https://github.com/alanwilter/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 5f7e6162d9a0aed2f770b9ccf5617ac1398a423cca815ae37cbf66d4cd62ea2f
+  sha256: 51dc45383c8efa0504075286226039c6baba9039311093b01e6d1b3ad88b1f44
 build:
-  number: 1
+  number: 0
   script:
     - mv recipe/setup_conda.py setup.py
     - {{ PYTHON }} -m pip install . -vv
