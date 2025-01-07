@@ -8,7 +8,7 @@ source:
   url: https://github.com/alanwilter/{{ name }}/archive/{{ version }}.tar.gz
   sha256: 51dc45383c8efa0504075286226039c6baba9039311093b01e6d1b3ad88b1f44
 build:
-  number: 0
+  number: 1
   script:
     - mv recipe/setup_conda.py setup.py
     - {{ PYTHON }} -m pip install . -vv
@@ -17,12 +17,12 @@ build:
     - acpype=acpype.cli:init_main
 requirements:
   host:
-    - python >=3
+    - python {{ python_min }}
     - poetry
     - pip
   run:
     - openbabel
-    - python >=3
+    - python >={{ python_min }}
     - ambertools
     - parmed
     - numpy
@@ -30,6 +30,8 @@ requirements:
     - matplotlib-base
 
 test:
+  requires:
+    - python {{ python_min }}
   commands:
     - acpype -h
 about:
