@@ -17,6 +17,9 @@ A tool based in Python to use Antechamber to generate topologies
 for chemical compounds and to interface with other python
 applications like CCPN or ARIA.
 
+CHARMM output additionally needs `charmmgen`, which modern AmberTools no longer
+ships. Run `acpype --fetch-charmmgen` once to install it into this environment.
+
 
 Current build status
 ====================
