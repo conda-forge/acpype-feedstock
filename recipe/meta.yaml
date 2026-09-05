@@ -4,36 +4,41 @@
 package:
   name: {{ name|lower }}
   version: {{ version }}
+
 source:
-  url: https://github.com/alanwilter/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: a0fd8e211588166bc6fec31aca3ed0a549d30e8823075d3779f4d9b1b1a479a9
+  # The PyPI sdist, not the GitHub archive: the tag tarball carries ~68 MB of vendored
+  # AmberTools that this package must not ship, since it depends on conda-forge's.
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 1ae68578899879ad8cfd9e81fbc1be29692a0296ddd9cd62a34e8c6fbb27aec8
+
 build:
   number: 0
-  script:
-    - mv recipe/setup_conda.py setup.py
-    - {{ PYTHON }} -m pip install . -vv
   noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
-    - acpype=acpype.cli:init_main
+    - acpype = acpype.cli:init_main
+
 requirements:
   host:
+    # acpype builds with uv_build since 2026.9.2; poetry is gone.
     - python {{ python_min }}
-    - poetry
+    - uv-build >=0.9,<0.13
     - pip
   run:
-    - openbabel
     - python >={{ python_min }}
     - ambertools
-    - parmed
-    - numpy
-    - scipy
-    - matplotlib-base
+    - openbabel
+    - rich >=14.2.0
+    - typer >=0.20.0
 
 test:
   requires:
     - python {{ python_min }}
+  imports:
+    - acpype
   commands:
     - acpype -h
+
 about:
   home: https://github.com/alanwilter/acpype
   license: GPL-3.0-or-later
@@ -41,10 +46,12 @@ about:
   license_file: LICENSE
   summary: Generates topologies for chemical compounds
   description: |
-    A tool based in Python to use Antechamber to generate topologies 
-    for chemical compounds and to interface with other python 
+    A tool based in Python to use Antechamber to generate topologies
+    for chemical compounds and to interface with other python
     applications like CCPN or ARIA.
 
+    CHARMM output additionally needs `charmmgen`, which modern AmberTools no longer
+    ships. Run `acpype --fetch-charmmgen` once to install it into this environment.
   doc_url: https://github.com/alanwilter/acpype
   dev_url: https://github.com/alanwilter/acpype
 
