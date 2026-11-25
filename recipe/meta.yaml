@@ -1,5 +1,5 @@
 {% set name = "acpype" %}
-{% set version = "2026.10.15" %}
+{% set version = "2026.11.25" %}
 
 package:
   name: {{ name|lower }}
@@ -9,7 +9,7 @@ source:
   # The PyPI sdist, not the GitHub archive: the tag tarball carries ~68 MB of vendored
   # AmberTools that this package must not ship, since it depends on conda-forge's.
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 58fab1ab715cfd81e942c1c61fd386526af9d179735ec9e17101de33dc1a7e6b
+  sha256: e4f2707acb6367ccbf7c0b500cd836cbacb5c59106a7d4d99ff1021e17c690c9
 
 build:
   number: 0
